@@ -12,9 +12,12 @@ void print_file_info(const char *path){
 }
 
 
-int main(){
+int main( int argc, char *argv[]){
+
+    const char *path;
     
-    const char *path = "./";
+    if (argc > 1) path = argv[1];
+    else path = "./";
     
     DIR * fd = opendir(path);
     //printf("errno: %d, error: %s\n", errno, strerror(errno));
